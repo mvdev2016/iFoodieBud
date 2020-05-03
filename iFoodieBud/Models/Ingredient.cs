@@ -1,8 +1,12 @@
-﻿namespace iFoodieBud.Models
+﻿using System.Collections.Generic;
+
+namespace iFoodieBud.Models
 {
     public class Ingredient
     {
-        public int Id { get; set; }
-        public int Name { get; set; }
+        public int IngredientId { get; set; }
+        public string Name { get; set; }
+
+        public ICollection<DishIngredients> DishIngredients  { get; set; }
     }
 }

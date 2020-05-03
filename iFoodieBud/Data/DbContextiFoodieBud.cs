@@ -13,6 +13,11 @@ namespace iFoodieBud.Infrastructure
             :base(options) {
         
         }
-        public DbSet<Page> Pages { get; set; }
+        public DbSet<Dish> Dishes { get; set; }
+        public DbSet<DietLabel> DietLabels { get; set; }
+
+        public DbSet<DishIngredients> DishIngredients { get; set; }
+        public DbSet<HealthLabel> HealthLabels { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
     }
 }

@@ -1,8 +1,13 @@
-﻿namespace iFoodieBud.Models
+﻿using System.Collections.Generic;
+
+namespace iFoodieBud.Models
 {
     public class HealthLabel
     {
-        public int Id { get; set; }
-        public int Name { get; set; }
+        public int HealthLabelId { get; set; }
+        public string Name { get; set; }
+
+        public int DishId { get; set; }
+        public ICollection<Dish> Dishes { get; set; }
     }
 }
