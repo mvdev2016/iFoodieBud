@@ -7,6 +7,6 @@ namespace iFoodieBud.Models
         public int IngredientId { get; set; }
         public string Name { get; set; }
 
-        public ICollection<DishIngredients> DishIngredients  { get; set; }
+        public List<DishIngredients> DishIngredients  { get; set; }
     }
 }

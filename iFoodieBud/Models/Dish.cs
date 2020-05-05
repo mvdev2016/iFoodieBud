@@ -23,7 +23,7 @@ namespace iFoodieBud.Models
       
         public string Image { get; set; }
         public float? Calories { get; set; }
-        public ICollection<DishIngredients> DishIngredients { get; set; }
+        public List<DishIngredients> DishIngredients { get; set; }
 
         public int DietLabelId { get; set; }
         public DietLabel DietLabel { get; set; }

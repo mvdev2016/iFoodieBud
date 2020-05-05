@@ -1,18 +1,19 @@
 ﻿@model iFoodieBud.Models.Dish
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
 <h4>Dish</h4>
 <hr />
-<div class="row justify-content-md-center">
+<div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DishId" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -40,39 +41,20 @@
             </div>
             <div class="form-group">
                 <label asp-for="DietLabelId" class="control-label"></label>
-                <select asp-for="DietLabelId" class ="form-control" asp-items="ViewBag.DietLabelId"></select>
-                <span>
-                    <button class="btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 16" width="7" height="16"><path fill-rule="evenodd" d="M4 4H3v3H0v1h3v3h1V8h3V7H4V4z"></path></svg>
-                    </button>
-                </span>
+                <select asp-for="DietLabelId" class="form-control" asp-items="ViewBag.DietLabelId"></select>
+                <span asp-validation-for="DietLabelId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HealthLabelId" class="control-label"></label>
-                <select asp-for="HealthLabelId" class ="form-control" asp-items="ViewBag.HealthLabelId"></select>
+                <select asp-for="HealthLabelId" class="form-control" asp-items="ViewBag.HealthLabelId"></select>
+                <span asp-validation-for="HealthLabelId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
-
-<section>
-    <h4>Create New </h4>
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            </form>
-            </div>
-
-</section>
 
 <div>
     <a asp-action="Index">Back to List</a>
